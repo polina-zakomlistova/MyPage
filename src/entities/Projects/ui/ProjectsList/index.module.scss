@@ -1,0 +1,71 @@
+$color-title: #a8d8ea;
+$color-text-inverted: #ffffd2;
+$color-title-2: #aa96da;
+$widthCircle: 120px;
+$left: -220px;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+    //линия
+    &::before {
+        content: '';
+        position: absolute;
+        border: 0.3rem solid $color-title;
+        left: calc($left + ($widthCircle/2) + 30px);
+        height: 100%;
+        background: $color-title;
+        transform: translate(-50%, 0);
+    }
+}
+.projects {
+    list-style: none;
+    width: inherit;
+}
+.projects {
+    & > div:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+.ProjectWrapper {
+    $widthCircle: 120px;
+    $left: -220px;
+
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
+    //линия
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     border: 0.3rem solid $color-title;
+    //     left: calc($left + $widthCircle/2);
+    //     height: 100%;
+    //     background: $color-title;
+    //     transform: translate(-50%, 0);
+    // }
+    //круг
+    .date {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: $left;
+        background: $color-text-inverted;
+        border: 0.6rem solid $color-title;
+        border-radius: 50%;
+        width: $widthCircle;
+        aspect-ratio: 1;
+        color: $color-title-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0, -50%);
+    }
+}
