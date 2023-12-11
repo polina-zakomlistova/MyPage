@@ -1,9 +1,4 @@
-$bg-color: #ffffd2;
-$link-color-1: #aa96da;
-$link-color-2: #fcbad3;
-$color-title: #aa96da;
-$color-text: #a8d8ea;
-$color-text-inverted: #ffffd2;
+@import 'src/app/styles/styles.scss';
 
 .wrapper {
     width: 100%;
@@ -21,22 +16,26 @@ $color-text-inverted: #ffffd2;
     background: rgb(225, 225, 225);
     border-radius: calc(0.25rem / 2);
 }
-.left {
-    width: 50%;
-    padding: 30px;
-}
 
 .right {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 30px;
 }
+.right, .left{
+    padding: 10px;
+    width: 100%;
 
+    @include bigDevice{
+        width: 50%;
+        padding: 30px;
+    }
+}
 .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-center-column;
+
+    @include bigDevice{
+        @include flex-center-row;
+    }
 }
 
 .title {
@@ -69,6 +68,12 @@ $color-text-inverted: #ffffd2;
         top: 100%;
         clip-path: polygon(0 0, 100% 0, 0 100%);
         right: 0;
+        @include tabletDevice{
+            display: none;
+        }
+        @include mobileDevice{
+            display: none;
+        }
     }
 }
 
@@ -88,9 +93,7 @@ $color-text-inverted: #ffffd2;
 }
 
 .stack {
-    display: flex;
-    align-items: start;
-    justify-content: center;
+    @include flex-center-row;
     list-style: none;
     font-size: 16px;
     flex-wrap: wrap;
@@ -145,6 +148,9 @@ $color-text-inverted: #ffffd2;
     &:hover {
         transition: 0.2s;
         transform: scale(1.2);
+    }
+    @include mobileDevice{
+        width: 150px;
     }
 }
 .first {

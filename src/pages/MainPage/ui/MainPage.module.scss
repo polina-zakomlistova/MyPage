@@ -1,11 +1,21 @@
+@import 'src/app/styles/styles.scss';
+
 .title {
     font-size: 48px;
     font-weight: bold;
-    color: #333;
+    color: #aa96da;
     margin-bottom: 50px;
 }
 .wrapper {
     padding: 50px;
     max-width: 70%;
     margin: 0 auto;
+    @include tabletDevice{
+        padding: 10px 0px;
+        max-width: 100%;
+    }
+    @include mobileDevice{
+        padding: 10px 0px;
+        max-width: 100%;
+    }
 }

@@ -1,11 +1,9 @@
-@import 'reset';
-@import 'variables/global';
-@import 'variables/colors';
+@import 'styles.scss';
 
 body {
-    font: var(--font-m);
-    color: var(--primary-color);
-    background: var(--bg-color);
+    @include font($font-size-m, $font-line-m, $font-weight-m);
+    color: $color-text-app;
+    background: $bg-app;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
